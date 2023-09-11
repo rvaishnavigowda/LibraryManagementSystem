@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Issue Book";
+}
+
+<h2>Issue Book</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <p class="error-message">@ViewBag.ErrorMessage</p>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.successMessage))
+{
+    <p class="success-message">@ViewBag.successMessage</p>
+}
+
+@using (Html.BeginForm("issueBook", "Librarian", FormMethod.Post))
+{
+    <div>
+        <label for="studentusername">Student Name:</label>
+        <input type="text" id="studentUserName" name="studentUserName" required />
+    </div>
+    <div>
+        <label for="bookName">Book Name:</label>
+        <input type="text" id="bookName" name="bookName" required />
+    </div>
+    <div>
+        <label for="issueDate">Issue Date:</label>
+        <input type="date" id="issueDate" name="issueDate" required />
+    </div>
+    <button type="submit">Issue Book</button>
+}
+
+<p>@Html.ActionLink("Back to Librarian Functions", "LibrarianFunction", "Librarian")</p>
+
+<style>
+    .error-message {
+        color: red;
+    }
+</style>
+
+<style>
+    .success-message {
+        color: green;
+    }
+</style>

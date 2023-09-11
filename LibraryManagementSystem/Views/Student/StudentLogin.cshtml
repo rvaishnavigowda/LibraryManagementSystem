@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Student Login";
+}
+
+<h2>Student Login</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <p class="error-message">@ViewBag.ErrorMessage</p>
+}
+
+@using (Html.BeginForm("StudentLogin", "Student", FormMethod.Post))
+{
+    <div>
+        <label for="sUserName">Username:</label>
+        <input type="text" id="sUserName" name="sUserName" required />
+    </div>
+    <br />
+    <div>
+        <label for="sPassword">Password:</label>
+        <input type="password" id="sPassword" name="sPassword" required />
+    </div>
+    <button type="submit">Login</button>
+}
+<br />
+
+<form action="@Url.Action("Login", "Home")" method="get">
+    <button type="submit" class="operation-button">Logout</button>
+</form>
+
+
+<style>
+    .error-message {
+        color: red;
+    }
+</style>

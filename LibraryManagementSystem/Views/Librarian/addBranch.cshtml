@@ -1,0 +1,40 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "Add Branch";
+}
+
+<h2>Add Branch</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <p class="error-message">@ViewBag.ErrorMessage</p>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.successMessage))
+{
+    <p class="success-message">@ViewBag.successMessage</p>
+}
+
+@using (Html.BeginForm("addBranch", "Librarian", FormMethod.Post))
+{
+    <div>
+        <label for="branchName">Branch Name:</label>
+        <input type="text" id="branchName" name="branchName" required />
+    </div>
+    <button type="submit">Add Branch</button>
+}
+
+<p>@Html.ActionLink("Back to Librarian Functions", "LibrarianFunction", "Librarian")</p>
+
+<style>
+    .error-message {
+        color: red;
+    }
+</style>
+
+<style>
+    .success-message {
+        color: green;
+    }
+</style>

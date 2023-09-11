@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Librarian Functions";
+}
+
+<h2>Librarian Functions</h2>
+
+<ul>
+    <form action="@Url.Action("AddPublication", "Librarian")" method="get">
+        <input type="hidden" name="operation" value="AddPublication" />
+        <button type="submit" class="operation-button">Add Publication</button>
+    </form>
+    <br />
+    <form action="@Url.Action("AddBranch", "Librarian")" method="get">
+        <input type="hidden" name="operation" value="AddBranch" />
+        <button type="submit" class="operation-button">Add Branch</button>
+    </form>
+    <br />
+    <form action="@Url.Action("AddBook", "Librarian")" method="get">
+        <input type="hidden" name="operation" value="AddBook" />
+        <button type="submit" class="operation-button">Add Book</button>
+    </form>
+    <br />
+    <form action="@Url.Action("AddStudent", "Librarian")" method="get">
+        <input type="hidden" name="operation" value="AddStudent" />
+        <button type="submit" class="operation-button">Add Student</button>
+    </form>
+    <br />
+    <form action="@Url.Action("IssueBook", "Librarian")" method="get">
+        <input type="hidden" name="operation" value="IssueBook" />
+        <button type="submit" class="operation-button">Issue Book</button>
+    </form>
+    <br />
+    <form action="@Url.Action("ReturnBook", "Librarian")" method="get">
+        <input type="hidden" name="operation" value="ReturnBook" />
+        <button type="submit" class="operation-button">Return Book</button>
+    </form>
+</ul>
+
+<form action="@Url.Action("Login", "Home")" method="get">
+    <button type="submit" class="operation-button">Logout</button>
+</form>

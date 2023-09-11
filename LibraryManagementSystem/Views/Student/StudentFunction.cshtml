@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Student Function";
+
+}
+
+<h2>Student Function</h2>
+
+
+
+<ul>
+    <form action="@Url.Action("StudentAccount", "Student")" method="get">
+        <input type="hidden" name="operation" value="Account" />
+        <button type="submit" class="operation-button">Show account details</button>
+    </form>
+    <br />
+    <form action="@Url.Action("StudentBookReport", "Student")" method="get">
+        <input type="hidden" name="operation" value="BookReport" />
+        <button type="submit" class="operation-button">Book Report</button>
+    </form>
+</ul>
+
+<form action="@Url.Action("Login", "Home")" method="get">
+    <button type="submit" class="operation-button">Logout</button>
+</form>

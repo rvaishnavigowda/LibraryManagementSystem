@@ -1,0 +1,53 @@
+﻿@model IEnumerable<LibraryDAL.Models.IssuedBook>
+
+@{
+    ViewBag.Title = "Report";
+}
+
+<h2>Report</h2>
+<h3>@ViewBag.Currentstudent</h3>
+
+@if (Model == null)
+{
+    <p>@ViewBag.ErrorMessage</p>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>
+                BookID
+            </th>
+            <th>
+                Is Issued
+            </th>
+            <th>
+                Issue Date
+            </th>
+            <th>
+                Return Date
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsIssued)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IssueDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReturnDate)
+                </td>
+            </tr>
+        }
+    </table>
+
+    <div>
+        <a href="@Url.Action("StudentFunction", "Student")">Back to Dashboard</a>
+    </div>
+}

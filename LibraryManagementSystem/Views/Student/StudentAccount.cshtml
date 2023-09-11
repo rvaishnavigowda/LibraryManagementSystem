@@ -1,0 +1,14 @@
+﻿@model LibraryDAL.Models.Student
+
+@{
+    ViewBag.Title = "Student Account";
+}
+
+<h2>Student Account Details</h2>
+
+@*<p>Name: @Model.Name</p>*@
+<p>Student ID: @Model.StudentId</p>
+<p>Semester: @Model.Semester</p>
+<p>Username: @Model.Username</p>
+
+<p>@Html.ActionLink("Back to Student Function", "StudentFunction", "Student", new { operation = "Account" }, null)</p>

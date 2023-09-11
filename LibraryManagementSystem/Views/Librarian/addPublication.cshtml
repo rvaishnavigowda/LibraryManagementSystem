@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Add Publication";
+    //string successMessage = TempData["SuccessMessage"] as string;
+}
+
+<h2>Add Publication</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <p class="error-message">@ViewBag.ErrorMessage</p>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.successMessage))
+{
+    <p class="success-message">@ViewBag.successMessage</p>
+}
+
+@using (Html.BeginForm("addPublication", "Librarian", FormMethod.Post))
+{
+    <div>
+        <label for="publicationName">Publication Name:</label>
+        <input type="text" id="publicationName" name="publicationName" required />
+    </div>
+    <button type="submit">Add Publication</button>
+}
+
+
+
+<style>
+    .success-message {
+        color: green;
+    }
+</style>
+
+<p>@Html.ActionLink("Back to Librarian Functions", "LibrarianFunction", "Librarian")</p>
+
+<style>
+    .error-message {
+        color: red;
+    }
+</style>

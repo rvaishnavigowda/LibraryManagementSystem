@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "LibrarianLogin";
+}
+
+<h2>Librarian Login</h2>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+@using (Html.BeginForm("LibrarianLogin", "Librarian", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Username:")
+        @Html.TextBox("lUserName", "", new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Password:")
+        @Html.Password("lPassword", "", new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+}
+
+<p>@Html.ActionLink("Back to User Page", "Login", "Home")</p>
